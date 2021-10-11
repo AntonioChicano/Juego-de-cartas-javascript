@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Juegazo</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <!--fuente-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+
+  <!--Mi CSS-->
+  <link rel="stylesheet" href="css/style_memory.css">
+</head>
+
+<body>
+
+
+  <main role="main" class="container" id="app">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="text-center">BUSCA LAS PAREJAS</h1>
+        <p>
+          <span class="h5">INTENTOS:</span>&nbsp;&nbsp;&nbsp;
+          {{intentos}}/{{MAXIMOS_INTENTOS}}&nbsp; <br> <span class="h5">ACIERTOS:</span>&nbsp;&nbsp;&nbsp;{{aciertos}}
+          <br>
+          <a @click="mostrarCreditos" href="#" class="text-light">Copyright ©</a>
+        </p>
+      </div>
+    </div>
+    <!--tarjetas // memorama son las cartas-->
+    <div v-for="(fila, indiceFila) in memorama" :key="indiceFila" class="row">
+      <!--comillas simples es un separador :key="indiceFila+''+indiceImagen"-->
+      <div :key="indiceFila+''+indiceImagen" class="col-2" v-for="(imagen, indiceImagen) in fila">
+        <div class="mb-4">
+          <img @click="voltear(indiceFila, indiceImagen)" :class="{'girar': imagen.mostrar}" :src="(imagen.mostrar ? imagen.ruta :
+            NOMBRE_IMAGEN_OCULTA)" class="card-img-top img-fluid" />
+          <!--Esta clase ara que tenga un pequeño padding "img-thumbnail"-->
+        </div>
+      </div>
+    </div>
+
+
+    <audio src="audio/ringtones-super-mario-bros.mp3" autoplay controls="controls" loop></audio>
+  </main>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="js/sweetalert2.all.min.js"></script>
+  <script src="js/vue.min.js"></script>
+  <script src="js/borrar.js"></script>
+</body>
+
+</html>
