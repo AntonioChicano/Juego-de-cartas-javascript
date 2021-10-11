@@ -1,0 +1,94 @@
+html {
+    background-color: #7686ff;
+}
+
+body {
+    font-family: 'Squada One', cursive;
+    background: url(../img/Super-Mario-fondo1.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 1000px;
+}
+
+h1 {
+    color: #efcfbb;
+    text-shadow: 2px 4px #000000;
+}
+
+p {
+    font-size: 25px;
+    margin-top: -60px;
+    color: #efcfbb;
+    text-shadow: 1px 2px #000000;
+}
+
+p a {
+    font-size: 18px;
+}
+
+img.card-img-top {
+    cursor: pointer;
+    max-height: 170.76px !important;
+    max-width: 253.48px !important;
+    border-radius: 17px;
+    box-shadow: 2px 2px 2px 1px #00000033;
+    animation: fade 1.5s;
+}
+
+@keyframes fade {
+    from {
+        transform: rotatey(90deg);
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+img.card-img-top.girar {
+    animation: fadein 1.5s;
+}
+
+@keyframes fadein {
+    from {
+        transform: rotateY(90deg);
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+audio {
+    margin-top: 170px;
+    margin-left: 400px;
+}
+
+@media (max-width: 800px) {
+    body {
+        height: 1100px;
+    }
+    audio {
+        margin-top: 182px;
+        margin-left: 200px;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        height: 680px;
+    }
+    p {
+        margin-top: -10px;
+        text-align: center;
+    }
+    audio {
+        margin-top: 60px;
+        margin-left: 22px;
+    }
+}
+
+.mario {
+    margin-top: -120px;
+}
